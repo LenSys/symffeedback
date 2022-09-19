@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col text-center">
+        <h1 class="pt-4">Feedback</h1>
+        <p>Thank you for your feedback!</p>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-4 text-center">
+        {% if(feedbacks is defined) %}
+            {% for feedback in feedbacks %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ feedback.name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ feedback.email }}</h6>
+                        <p class="card-text">{{ feedback.feedback }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No feedback available yet.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <div class="col text-center">
+        <h1 class="pt-4">Feedback</h1>
+        <p>Leave feedback for Feedback Corp.</p>
+    </div>
+</div>
+<div class="row">
+    {{ form_start(feedback_form, {'attr': {'novalidate': 'novalidate'}}) }}
+        <div class="row justify-content-center">
+            <div class="col-4">
+                {{ form_row(feedback_form.name) }}
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                {{ form_row(feedback_form.email) }}
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                {{ form_row(feedback_form.feedback) }}
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-4">
+                {{ form_row(feedback_form.Send) }}
+            </div>
+        </div>
+    {{ form_end(feedback_form) }}
+</div>
+</div>
+{% endblock %}
